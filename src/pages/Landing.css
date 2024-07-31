@@ -1,0 +1,37 @@
+/* LandingPage.css */
+
+header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+header button {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+section h2 {
+    font-size: 1.75rem;
+    margin-top: 15px;
+}
+
+section p {
+    font-size: 1rem;
+    color: #6c757d;
+}

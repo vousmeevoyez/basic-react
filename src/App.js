@@ -1,37 +1,16 @@
-import React from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/Landing";
+import NotFound from "./pages/NotFound";
+import CrudTable from "./pages/CrudTable";
 
-const LandingPage = () => {
+export default function App() {
   return (
-    <Container>
-      <header className="text-center my-5">
-        <img src="https://placehold.co/1000x600" alt="Banner" className="img-fluid" />
-        <h1 className="display-3 mt-4">Selamat Datang di Layanan Kami</h1>
-        <p className="lead">Kami menyediakan solusi untuk membantu Anda sukses.</p>
-        <Button color="primary" className="mt-3">Mulai Sekarang</Button>
-      </header>
-      <section className="my-5">
-        <Row>
-          <Col md="4" className="text-center mb-4">
-            <img src="https://placehold.co/600x400" alt="Feature 1" className="img-fluid mb-2" />
-            <h2>Fitur 1</h2>
-            <p>Deskripsi singkat tentang fitur 1.</p>
-          </Col>
-          <Col md="4" className="text-center mb-4">
-            <img src="https://placehold.co/600x400" alt="Feature 2" className="img-fluid mb-2" />
-            <h2>Fitur 2</h2>
-            <p>Deskripsi singkat tentang fitur 2.</p>
-          </Col>
-          <Col md="4" className="text-center mb-4">
-            <img src="https://placehold.co/600x400" alt="Feature 3" className="img-fluid mb-2" />
-            <h2>Fitur 3</h2>
-            <p>Deskripsi singkat tentang fitur 3.</p>
-          </Col>
-        </Row>
-      </section>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<LandingPage />} />
+        <Route path="/crud" element={<CrudTable />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
-
-export default LandingPage;
+}
